@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caesar Cipher Lab</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <h1>Caesar cipher lab</h1>
+        <p class="lede">
+          Shift each letter in the alphabet. This page is for
+          <strong>learning only</strong> — the Caesar cipher is trivial to break
+          and must never be used for real security.
+        </p>
+      </header>
+
+      <main class="panel">
+        <label class="field">
+          <span class="label">Message</span>
+          <textarea
+            id="message"
+            rows="5"
+            placeholder="Type your message here…"
+            spellcheck="true"
+          ></textarea>
+        </label>
+
+        <label class="field field-inline">
+          <span class="label">Shift</span>
+          <input
+            id="shift"
+            type="number"
+            value="3"
+            step="1"
+            aria-describedby="shift-help"
+          />
+          <span id="shift-help" class="hint">
+            Any integer works; only the remainder mod 26 changes letters.
+          </span>
+        </label>
+
+        <div class="actions">
+          <button type="button" id="btn-encrypt" class="btn primary">
+            Encrypt
+          </button>
+          <button type="button" id="btn-decrypt" class="btn">Decrypt</button>
+          <button type="button" id="btn-crack" class="btn ghost">
+            Try all 26 shifts
+          </button>
+        </div>
+
+        <section class="output" aria-live="polite">
+          <h2 class="output-title">Result</h2>
+          <pre id="result" class="result-box">Your output will appear here.</pre>
+        </section>
+      </main>
+
+      <aside class="learn">
+        <h2>How it works</h2>
+        <ol>
+          <li>
+            Pick a shift <code>k</code> (the “key”). Each letter moves
+            <code>k</code> steps forward (encrypt) or backward (decrypt) in
+            A–Z or a–z.
+          </li>
+          <li>
+            After <code>Z</code> you wrap to <code>A</code>. That wrap is
+            <strong>modular arithmetic</strong> with modulus 26.
+          </li>
+          <li>
+            Spaces, numbers, and punctuation are left alone so you can read
+            real sentences.
+          </li>
+          <li>
+            <strong>Crack:</strong> there are only 26 shifts for English letters,
+            so trying every shift is instant — tiny key space.
+          </li>
+        </ol>
+      </aside>
+
+      <footer class="footer">
+        Open this folder and double-click <code>index.html</code>, or use any
+        static file server. No build step or install required.
+      </footer>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
