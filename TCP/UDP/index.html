@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TCP vs UDP Simulator</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>TCP and UDP Mini Project</h1>
+      <p class="subtitle">
+        A simple browser simulation that compares reliability (TCP) and speed
+        (UDP).
+      </p>
+
+      <section class="controls">
+        <label for="messageInput">Message</label>
+        <input
+          id="messageInput"
+          type="text"
+          value="HELLO NETWORK"
+          maxlength="40"
+        />
+
+        <div class="buttons">
+          <button id="simulateTcpBtn">Send with TCP</button>
+          <button id="simulateUdpBtn">Send with UDP</button>
+          <button id="resetBtn" class="secondary">Reset</button>
+        </div>
+      </section>
+
+      <section class="stats">
+        <article class="card">
+          <h2>TCP</h2>
+          <p id="tcpStatus">Status: Waiting</p>
+          <p id="tcpSummary">Packets delivered: 0</p>
+          <p id="tcpOutput">Final output: -</p>
+          <p id="tcpDeliveryCheck">Delivery check: -</p>
+        </article>
+        <article class="card">
+          <h2>UDP</h2>
+          <p id="udpStatus">Status: Waiting</p>
+          <p id="udpSummary">Packets delivered: 0</p>
+          <p id="udpOutput">Final output: -</p>
+          <p id="udpDeliveryCheck">Delivery check: -</p>
+        </article>
+      </section>
+
+      <section class="log-wrap">
+        <h2>Transmission Log</h2>
+        <pre id="log"></pre>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
